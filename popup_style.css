@@ -1,0 +1,119 @@
+
+body{
+    font-family: sans-serif;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    vertical-align:middle;
+    
+
+  }
+  
+  .input_group{
+    position: relative;
+    padding-top: 13px;
+  }
+  
+  .input_group input{
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    outline: none;
+    min-width: 250px;
+    padding: 15px 20px;
+    font-size: 16px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -webkit-appearance:none;
+  }
+  
+  .input_group input:focus{
+    
+    border: 2px solid #e63946;
+    
+  }
+  
+  .input_group input::placeholder{
+    color:transparent;
+  }
+  
+  .input_group label{
+    pointer-events: none;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 15px;
+    transition: all .1s linear;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    background-color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    
+  }
+
+  .input_group input:focus + label,
+  .input_group input:not(:placeholder-shown) + label{
+    font-size: 13px;
+    top: 0;
+    color: #e63946;
+  }
+  /* Button */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    /* subtle color palete */
+    --black-1a: hsla(0, 0%, 0%, 0.3);
+    /* basic color palette */
+    --white-1: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 90%);
+    --black-1: hsl(0, 0%, 0%);
+    --black-2: hsl(78, 95%, 37%);
+    --orange-1: hsl(30, 100%, 50%);
+    /* fonts */
+    --ft-fy-fallback-1: sans-serif;
+    --ft-fy-1: "Poppins", var(--ft-fy-fallback-1);
+    --ft-se-300: 0.9rem;
+    --ft-se-400: 1.05rem;
+    /* spaces */
+    --space-200: 0.5em;
+    --space-400: 2em;
+  }
+  
+  
+  
+  .clear-box {
+    --__primary-button_tn_options: 150ms linear;
+    gap: var(--space-200);
+    display: flex;
+  }
+  
+  .primary-button {
+    border: var(--__primary-button_br, 1px solid var(--black-1a));
+    padding: var(--__primary-button_pg, 0.7em 1.4em);
+    color: var(--__primary-button_cr, var(--white-1));
+    cursor: pointer;
+    outline: none;
+    font-size: var(--__primary-button_ft-se, var(--ft-se-300));
+    font-family: var(--__primary-button_ft-fy, var(--ft-fy-1));
+    background-color: var(--__primary-button_bd-cr, var(--black-2));
+    transition: var(--__primary-button_tn, color var(--__primary-button_tn_options), background-color var(--__primary-button_tn_options));
+  }
+  .primary-button:hover {
+    --__primary-button_cr: var(--black-2);
+    --__primary-button_bd-cr: var(--white-1);
+  }
+  
+  
+  
+  .clear-box {
+      margin-top: 10px;
+      width: 100px;
+      flex-direction: column;
+    }
+  

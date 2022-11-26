@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup_style.css">
+  <script src="background.js" type="text/javascript"></script>
+  
+  </head>
+  <body>
+    <div class="container">  
+      <div class="input_group">
+        <input type="text" id="name" required class="input" placeholder=" "/>
+        <label for="name" class="input-label" >Youtube Link</label>
+      </div>
+      <div class="clear-box">
+        <button type="button" class="primary-button focus" onclick="downloadVideo()">Download</button>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    function downloadVideo() {
+  var xhr = new XMLHttpRequest();
+  var url = document.getElementById("name").value;
+  xhr.open('GET',url, true);
+  xhr.responseType = 'blob';
+  xhr.onload = function() {
+    var urlCreator = window.URL || window.webkitURL;
+    var imageUrl = urlCreator.createObjectURL(this.response);
+    var tag = document.createElement('a');
+    tag.href = imageUrl;
+    tag.target = '_blank';
+    tag.download = 'demo.mp4';
+    document.body.appendChild(tag);
+    tag.click();
+    document.body.removeChild(tag);
+  };
+  xhr.onerror = err => {
+    alert('Failed to download picture');
+  };
+  xhr.send();
+}
+</script>
+</html>
+
+
+
